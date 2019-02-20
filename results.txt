@@ -1,0 +1,1333 @@
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_main.c:13:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: In function 'aq_nic_get_dev':
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:102:19: error: 'struct net_device' has no member named 'dev'
+  return self->ndev->dev.parent;
+                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:51: error: 'struct ethtool_regs' declared inside parameter list [-Werror]
+ int aq_nic_get_regs(struct aq_nic_s *self, struct ethtool_regs *regs, void *p);
+                                                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:51: error: its scope is only this definition or declaration, which is probably not what you want [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:137:61: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ void aq_nic_get_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                             ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:138:60: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ int aq_nic_set_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                            ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_main.c:14:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.h:28:6: error: unknown type name 'cpumask_t'
+      cpumask_t *affinity_mask);
+      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c: In function 'aq_ndev_alloc':
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:46:6: error: 'struct net_device' has no member named 'netdev_ops'
+  ndev->netdev_ops = &aq_ndev_ops;
+      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:47:20: error: assignment discards 'const' qualifier from pointer target type [-Werror]
+  ndev->ethtool_ops = &aq_ethtool_ops;
+                    ^
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c: In function 'aq_ndev_set_mac_address':
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:139:2: error: implicit declaration of function 'eth_mac_addr' [-Werror=implicit-function-declaration]
+  err = eth_mac_addr(ndev, addr);
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:164:21: error: variable 'aq_ndev_ops' has initializer but incomplete type
+ static const struct net_device_ops aq_ndev_ops = {
+                     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:165:2: error: unknown field 'ndo_open' specified in initializer
+  .ndo_open = aq_ndev_open,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:165:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:165:2: error: (near initialization for 'aq_ndev_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:166:2: error: unknown field 'ndo_stop' specified in initializer
+  .ndo_stop = aq_ndev_close,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:166:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:166:2: error: (near initialization for 'aq_ndev_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:167:2: error: unknown field 'ndo_start_xmit' specified in initializer
+  .ndo_start_xmit = aq_ndev_start_xmit,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:167:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:167:2: error: (near initialization for 'aq_ndev_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:169:2: error: unknown field 'ndo_set_multicast_list' specified in initializer
+  .ndo_set_multicast_list = aq_ndev_set_multicast_settings,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:169:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:169:2: error: (near initialization for 'aq_ndev_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:176:2: error: unknown field 'ndo_change_mtu' specified in initializer
+  .ndo_change_mtu = aq_ndev_change_mtu,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:176:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:176:2: error: (near initialization for 'aq_ndev_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:178:2: error: unknown field 'ndo_set_mac_address' specified in initializer
+  .ndo_set_mac_address = aq_ndev_set_mac_address,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:178:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_main.c:178:2: error: (near initialization for 'aq_ndev_ops') [-Werror]
+cc1: all warnings being treated as errors
+x86_64-linux5.0-gcc: error: vmkdrivers/src_9/drivers/net/aqc/aq_common.c: No such file or directory
+x86_64-linux5.0-gcc: fatal error: no input files
+compilation terminated.
+vmkdrivers/src_9/drivers/net/aqc/aq_drvinfo.c:17:31: fatal error: linux/hwmon-sysfs.h: No such file or directory
+ #include <linux/hwmon-sysfs.h>
+                               ^
+compilation terminated.
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:13:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: In function 'aq_nic_get_dev':
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:102:19: error: 'struct net_device' has no member named 'dev'
+  return self->ndev->dev.parent;
+                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:51: error: 'struct ethtool_regs' declared inside parameter list [-Werror]
+ int aq_nic_get_regs(struct aq_nic_s *self, struct ethtool_regs *regs, void *p);
+                                                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:51: error: its scope is only this definition or declaration, which is probably not what you want [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:137:61: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ void aq_nic_get_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                             ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:138:60: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ int aq_nic_set_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                            ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:14:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_vec.h:37:1: error: unknown type name 'cpumask_t'
+ cpumask_t *aq_vec_get_affinity_mask(struct aq_vec_s *self);
+ ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:17:12: error: 'struct ethtool_regs' declared inside parameter list [-Werror]
+     struct ethtool_regs *regs, void *p)
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_get_regs':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:23:2: error: passing argument 2 of 'aq_nic_get_regs' from incompatible pointer type [-Werror]
+  aq_nic_get_regs(aq_nic, regs, p);
+  ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:13:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:5: note: expected 'struct ethtool_regs *' but argument is of type 'struct ethtool_regs *'
+ int aq_nic_get_regs(struct aq_nic_s *self, struct ethtool_regs *regs, void *p);
+     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_get_link':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:36:2: error: implicit declaration of function 'ethtool_op_get_link' [-Werror=implicit-function-declaration]
+  return ethtool_op_get_link(ndev);
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:62:15: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+        struct ethtool_cmd *cmd)
+               ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_get_settings':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:67:2: error: passing argument 2 of 'aq_nic_get_link_settings' from incompatible pointer type [-Werror]
+  aq_nic_get_link_settings(aq_nic, cmd);
+  ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:13:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:137:6: note: expected 'struct ethtool_cmd *' but argument is of type 'struct ethtool_cmd *'
+ void aq_nic_get_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:68:2: error: implicit declaration of function 'ethtool_cmd_speed_set' [-Werror=implicit-function-declaration]
+  ethtool_cmd_speed_set(cmd, netif_carrier_ok(ndev) ?
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:75:15: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+        struct ethtool_cmd *cmd)
+               ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_set_settings':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:80:2: error: passing argument 2 of 'aq_nic_set_link_settings' from incompatible pointer type [-Werror]
+  err = aq_nic_set_link_settings(aq_nic, cmd);
+  ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:13:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:138:5: note: expected 'struct ethtool_cmd *' but argument is of type 'struct ethtool_cmd *'
+ int aq_nic_set_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:86:43: error: 'ETH_GSTRING_LEN' undeclared here (not in a function)
+ static const char aq_ethtool_stat_names[][ETH_GSTRING_LEN] = {
+                                           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:131:16: error: 'struct ethtool_stats' declared inside parameter list [-Werror]
+         struct ethtool_stats *stats, u64 *data)
+                ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:143:15: error: 'struct ethtool_drvinfo' declared inside parameter list [-Werror]
+        struct ethtool_drvinfo *drvinfo)
+               ^
+In file included from vmkdrivers/src_92/include/linux/skbuff.h:20:0,
+                 from vmkdrivers/src_92/include/linux/if_ether.h:156,
+                 from vmkdrivers/src_92/include/linux/etherdevice.h:30,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_common.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:12:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_get_drvinfo':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:147:40: error: 'struct net_device' has no member named 'dev'
+  struct pci_dev *pdev = to_pci_dev(ndev->dev.parent);
+                                        ^
+vmkdrivers/src_92/include/linux/kernel.h:752:56: note: in definition of macro 'container_of'
+         const typeof( ((type *)0)->member ) *__mptr = (ptr); \
+                                                        ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:147:25: note: in expansion of macro 'to_pci_dev'
+  struct pci_dev *pdev = to_pci_dev(ndev->dev.parent);
+                         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:151:17: error: dereferencing pointer to incomplete type
+  strlcat(drvinfo->driver, AQ_CFG_DRV_NAME, sizeof(drvinfo->driver));
+                 ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:151:58: error: dereferencing pointer to incomplete type
+  strlcat(drvinfo->driver, AQ_CFG_DRV_NAME, sizeof(drvinfo->driver));
+                                                          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:152:17: error: dereferencing pointer to incomplete type
+  strlcat(drvinfo->version, AQ_CFG_DRV_VERSION, sizeof(drvinfo->version));
+                 ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:152:62: error: dereferencing pointer to incomplete type
+  strlcat(drvinfo->version, AQ_CFG_DRV_VERSION, sizeof(drvinfo->version));
+                                                              ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:154:18: error: dereferencing pointer to incomplete type
+  snprintf(drvinfo->fw_version, sizeof(drvinfo->fw_version),
+                  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:154:46: error: dereferencing pointer to incomplete type
+  snprintf(drvinfo->fw_version, sizeof(drvinfo->fw_version),
+                                              ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:158:17: error: dereferencing pointer to incomplete type
+  strlcpy(drvinfo->bus_info, pdev ? pci_name(pdev) : "",
+                 ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:159:17: error: dereferencing pointer to incomplete type
+   sizeof(drvinfo->bus_info));
+                 ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:160:9: error: dereferencing pointer to incomplete type
+  drvinfo->n_stats = ARRAY_SIZE(aq_ethtool_stat_names) +
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:162:9: error: dereferencing pointer to incomplete type
+  drvinfo->testinfo_len = 0;
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:163:9: error: dereferencing pointer to incomplete type
+  drvinfo->regdump_len = regs_count;
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:164:9: error: dereferencing pointer to incomplete type
+  drvinfo->eedump_len = 0;
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_get_strings':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:176:8: error: 'ETH_SS_STATS' undeclared (first use in this function)
+  case  ETH_SS_STATS:
+        ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:176:8: note: each undeclared identifier is reported only once for each function it appears in
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:190:8: error: 'ETH_SS_PRIV_FLAGS' undeclared (first use in this function)
+  case  ETH_SS_PRIV_FLAGS:
+        ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_get_sset_count':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:204:7: error: 'ETH_SS_STATS' undeclared (first use in this function)
+  case ETH_SS_STATS:
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:208:8: error: 'ETH_SS_PRIV_FLAGS' undeclared (first use in this function)
+  case  ETH_SS_PRIV_FLAGS:
+        ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:266:5: error: 'struct ethtool_rxnfc' declared inside parameter list [-Werror]
+     void *rule_locs)
+     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_get_rxnfc':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:273:13: error: dereferencing pointer to incomplete type
+  switch (cmd->cmd) {
+             ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:274:7: error: 'ETHTOOL_GRXRINGS' undeclared (first use in this function)
+  case ETHTOOL_GRXRINGS:
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:275:6: error: dereferencing pointer to incomplete type
+   cmd->data = cfg->vecs;
+      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:287:15: error: 'struct ethtool_coalesce' declared inside parameter list [-Werror]
+        struct ethtool_coalesce *coal)
+               ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_get_coalesce':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:294:7: error: dereferencing pointer to incomplete type
+   coal->rx_coalesce_usecs = cfg->rx_itr;
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:295:7: error: dereferencing pointer to incomplete type
+   coal->tx_coalesce_usecs = cfg->tx_itr;
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:296:7: error: dereferencing pointer to incomplete type
+   coal->rx_max_coalesced_frames = 0;
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:297:7: error: dereferencing pointer to incomplete type
+   coal->tx_max_coalesced_frames = 0;
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:299:7: error: dereferencing pointer to incomplete type
+   coal->rx_coalesce_usecs = 0;
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:300:7: error: dereferencing pointer to incomplete type
+   coal->tx_coalesce_usecs = 0;
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:301:7: error: dereferencing pointer to incomplete type
+   coal->rx_max_coalesced_frames = 1;
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:302:7: error: dereferencing pointer to incomplete type
+   coal->tx_max_coalesced_frames = 1;
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:308:15: error: 'struct ethtool_coalesce' declared inside parameter list [-Werror]
+        struct ethtool_coalesce *coal)
+               ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_set_coalesce':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:315:10: error: dereferencing pointer to incomplete type
+  if (coal->use_adaptive_rx_coalesce || coal->use_adaptive_tx_coalesce)
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:315:44: error: dereferencing pointer to incomplete type
+  if (coal->use_adaptive_rx_coalesce || coal->use_adaptive_tx_coalesce)
+                                            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:320:10: error: dereferencing pointer to incomplete type
+  if (coal->rx_max_coalesced_frames > 1 ||
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:321:10: error: dereferencing pointer to incomplete type
+      coal->rx_coalesce_usecs_irq ||
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:322:10: error: dereferencing pointer to incomplete type
+      coal->rx_max_coalesced_frames_irq)
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:325:10: error: dereferencing pointer to incomplete type
+  if (coal->tx_max_coalesced_frames > 1 ||
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:326:10: error: dereferencing pointer to incomplete type
+      coal->tx_coalesce_usecs_irq ||
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:327:10: error: dereferencing pointer to incomplete type
+      coal->tx_max_coalesced_frames_irq)
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:332:12: error: dereferencing pointer to incomplete type
+  if (!(coal->rx_max_coalesced_frames == !coal->rx_coalesce_usecs))
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:332:46: error: dereferencing pointer to incomplete type
+  if (!(coal->rx_max_coalesced_frames == !coal->rx_coalesce_usecs))
+                                              ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:334:12: error: dereferencing pointer to incomplete type
+  if (!(coal->tx_max_coalesced_frames == !coal->tx_coalesce_usecs))
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:334:46: error: dereferencing pointer to incomplete type
+  if (!(coal->tx_max_coalesced_frames == !coal->tx_coalesce_usecs))
+                                              ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:337:10: error: dereferencing pointer to incomplete type
+  if (coal->rx_coalesce_usecs > AQ_CFG_INTERRUPT_MODERATION_USEC_MAX ||
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:338:10: error: dereferencing pointer to incomplete type
+      coal->tx_coalesce_usecs > AQ_CFG_INTERRUPT_MODERATION_USEC_MAX)
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:343:20: error: dereferencing pointer to incomplete type
+  cfg->rx_itr = coal->rx_coalesce_usecs;
+                    ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:344:20: error: dereferencing pointer to incomplete type
+  cfg->tx_itr = coal->tx_coalesce_usecs;
+                    ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:351:18: error: 'struct ethtool_wolinfo' declared inside parameter list [-Werror]
+           struct ethtool_wolinfo *wol)
+                  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_get_wol':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:356:5: error: dereferencing pointer to incomplete type
+  wol->supported = WAKE_MAGIC;
+     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:356:19: error: 'WAKE_MAGIC' undeclared (first use in this function)
+  wol->supported = WAKE_MAGIC;
+                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:357:5: error: dereferencing pointer to incomplete type
+  wol->wolopts = 0;
+     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:360:6: error: dereferencing pointer to incomplete type
+   wol->wolopts |= WAKE_MAGIC;
+      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:364:17: error: 'struct ethtool_wolinfo' declared inside parameter list [-Werror]
+          struct ethtool_wolinfo *wol)
+                 ^
+In file included from vmkdrivers/src_92/include/linux/skbuff.h:20:0,
+                 from vmkdrivers/src_92/include/linux/if_ether.h:156,
+                 from vmkdrivers/src_92/include/linux/etherdevice.h:30,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_common.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:12:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_set_wol':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:368:40: error: 'struct net_device' has no member named 'dev'
+  struct pci_dev *pdev = to_pci_dev(ndev->dev.parent);
+                                        ^
+vmkdrivers/src_92/include/linux/kernel.h:752:56: note: in definition of macro 'container_of'
+         const typeof( ((type *)0)->member ) *__mptr = (ptr); \
+                                                        ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:368:25: note: in expansion of macro 'to_pci_dev'
+  struct pci_dev *pdev = to_pci_dev(ndev->dev.parent);
+                         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:371:9: error: dereferencing pointer to incomplete type
+  if (wol->wolopts & WAKE_MAGIC) {
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:371:21: error: 'WAKE_MAGIC' undeclared (first use in this function)
+  if (wol->wolopts & WAKE_MAGIC) {
+                     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:368:18: error: unused variable 'pdev' [-Werror=unused-variable]
+  struct pci_dev *pdev = to_pci_dev(ndev->dev.parent);
+                  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'eee_mask_to_ethtool_mask':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:390:11: error: 'SUPPORTED_10000baseT_Full' undeclared (first use in this function)
+   rate |= SUPPORTED_10000baseT_Full;
+           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:398:11: error: 'SUPPORTED_2500baseX_Full' undeclared (first use in this function)
+   rate |= SUPPORTED_2500baseX_Full;
+           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:402:11: error: 'SUPPORTED_1000baseT_Full' undeclared (first use in this function)
+   rate |= SUPPORTED_1000baseT_Full;
+           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:407:63: error: 'struct ethtool_eee' declared inside parameter list [-Werror]
+ static int aq_ethtool_get_eee(struct net_device *ndev, struct ethtool_eee *eee)
+                                                               ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_get_eee':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:422:5: error: dereferencing pointer to incomplete type
+  eee->supported = eee_mask_to_ethtool_mask(supported_rates);
+     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:425:6: error: dereferencing pointer to incomplete type
+   eee->advertised = eee->supported;
+      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:425:24: error: dereferencing pointer to incomplete type
+   eee->advertised = eee->supported;
+                        ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:427:5: error: dereferencing pointer to incomplete type
+  eee->lp_advertised = eee_mask_to_ethtool_mask(rate);
+     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:429:5: error: dereferencing pointer to incomplete type
+  eee->eee_enabled = !!eee->advertised;
+     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:429:26: error: dereferencing pointer to incomplete type
+  eee->eee_enabled = !!eee->advertised;
+                          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:431:5: error: dereferencing pointer to incomplete type
+  eee->tx_lpi_enabled = eee->eee_enabled;
+     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:431:27: error: dereferencing pointer to incomplete type
+  eee->tx_lpi_enabled = eee->eee_enabled;
+                           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:432:9: error: dereferencing pointer to incomplete type
+  if (eee->advertised & eee->lp_advertised)
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:432:27: error: dereferencing pointer to incomplete type
+  if (eee->advertised & eee->lp_advertised)
+                           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:433:6: error: dereferencing pointer to incomplete type
+   eee->eee_active = true;
+      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:438:63: error: 'struct ethtool_eee' declared inside parameter list [-Werror]
+ static int aq_ethtool_set_eee(struct net_device *ndev, struct ethtool_eee *eee)
+                                                               ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_set_eee':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:453:9: error: dereferencing pointer to incomplete type
+  if (eee->eee_enabled) {
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:481:18: error: 'struct ethtool_pauseparam' declared inside parameter list [-Werror]
+           struct ethtool_pauseparam *pause)
+                  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_get_pauseparam':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:485:7: error: dereferencing pointer to incomplete type
+  pause->autoneg = 0;
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:488:8: error: dereferencing pointer to incomplete type
+   pause->rx_pause = 1;
+        ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:490:8: error: dereferencing pointer to incomplete type
+   pause->tx_pause = 1;
+        ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:494:17: error: 'struct ethtool_pauseparam' declared inside parameter list [-Werror]
+          struct ethtool_pauseparam *pause)
+                 ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_ethtool_set_pauseparam':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:502:11: error: dereferencing pointer to incomplete type
+  if (pause->autoneg == AUTONEG_ENABLE)
+           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:502:24: error: 'AUTONEG_ENABLE' undeclared (first use in this function)
+  if (pause->autoneg == AUTONEG_ENABLE)
+                        ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:505:11: error: dereferencing pointer to incomplete type
+  if (pause->rx_pause)
+           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:510:11: error: dereferencing pointer to incomplete type
+  if (pause->tx_pause)
+           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:521:16: error: 'struct ethtool_ringparam' declared inside parameter list [-Werror]
+         struct ethtool_ringparam *ring)
+                ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_get_ringparam':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:526:6: error: dereferencing pointer to incomplete type
+  ring->rx_pending = aq_nic_cfg->rxds;
+      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:527:6: error: dereferencing pointer to incomplete type
+  ring->tx_pending = aq_nic_cfg->txds;
+      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:529:6: error: dereferencing pointer to incomplete type
+  ring->rx_max_pending = aq_nic_cfg->aq_hw_caps->rxds_max;
+      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:530:6: error: dereferencing pointer to incomplete type
+  ring->tx_max_pending = aq_nic_cfg->aq_hw_caps->txds_max;
+      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:534:15: error: 'struct ethtool_ringparam' declared inside parameter list [-Werror]
+        struct ethtool_ringparam *ring)
+               ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: In function 'aq_set_ringparam':
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:541:10: error: dereferencing pointer to incomplete type
+  if (ring->rx_mini_pending || ring->rx_jumbo_pending) {
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:541:35: error: dereferencing pointer to incomplete type
+  if (ring->rx_mini_pending || ring->rx_jumbo_pending) {
+                                   ^
+In file included from vmkdrivers/src_92/include/linux/skbuff.h:20:0,
+                 from vmkdrivers/src_92/include/linux/if_ether.h:156,
+                 from vmkdrivers/src_92/include/linux/etherdevice.h:30,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_common.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:12:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:553:29: error: dereferencing pointer to incomplete type
+  aq_nic_cfg->rxds = max(ring->rx_pending, hw_caps->rxds_min);
+                             ^
+vmkdrivers/src_92/include/linux/kernel.h:608:9: note: in definition of macro 'max'
+  typeof(x) _x = (x); \
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:553:29: error: dereferencing pointer to incomplete type
+  aq_nic_cfg->rxds = max(ring->rx_pending, hw_caps->rxds_min);
+                             ^
+vmkdrivers/src_92/include/linux/kernel.h:608:18: note: in definition of macro 'max'
+  typeof(x) _x = (x); \
+                  ^
+vmkdrivers/src_92/include/linux/kernel.h:610:14: error: comparison of distinct pointer types lacks a cast [-Werror]
+  (void) (&_x == &_y);  \
+              ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:553:21: note: in expansion of macro 'max'
+  aq_nic_cfg->rxds = max(ring->rx_pending, hw_caps->rxds_min);
+                     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:557:29: error: dereferencing pointer to incomplete type
+  aq_nic_cfg->txds = max(ring->tx_pending, hw_caps->txds_min);
+                             ^
+vmkdrivers/src_92/include/linux/kernel.h:608:9: note: in definition of macro 'max'
+  typeof(x) _x = (x); \
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:557:29: error: dereferencing pointer to incomplete type
+  aq_nic_cfg->txds = max(ring->tx_pending, hw_caps->txds_min);
+                             ^
+vmkdrivers/src_92/include/linux/kernel.h:608:18: note: in definition of macro 'max'
+  typeof(x) _x = (x); \
+                  ^
+vmkdrivers/src_92/include/linux/kernel.h:610:14: error: comparison of distinct pointer types lacks a cast [-Werror]
+  (void) (&_x == &_y);  \
+              ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:557:21: note: in expansion of macro 'max'
+  aq_nic_cfg->txds = max(ring->tx_pending, hw_caps->txds_min);
+                     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:596:14: error: variable 'aq_ethtool_ops' has initializer but incomplete type
+ const struct ethtool_ops aq_ethtool_ops = {
+              ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:597:2: error: unknown field 'get_link' specified in initializer
+  .get_link            = aq_ethtool_get_link,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:597:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:597:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:598:2: error: unknown field 'get_regs_len' specified in initializer
+  .get_regs_len        = aq_ethtool_get_regs_len,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:598:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:598:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:599:2: error: unknown field 'get_regs' specified in initializer
+  .get_regs            = aq_ethtool_get_regs,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:599:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:599:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:600:2: error: unknown field 'get_drvinfo' specified in initializer
+  .get_drvinfo         = aq_ethtool_get_drvinfo,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:600:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:600:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:601:2: error: unknown field 'get_strings' specified in initializer
+  .get_strings         = aq_ethtool_get_strings,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:601:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:601:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:605:2: error: unknown field 'get_wol' specified in initializer
+  .get_wol             = aq_ethtool_get_wol,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:605:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:605:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:606:2: error: unknown field 'set_wol' specified in initializer
+  .set_wol             = aq_ethtool_set_wol,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:606:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:606:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:607:2: error: unknown field 'nway_reset' specified in initializer
+  .nway_reset          = aq_ethtool_nway_reset,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:607:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:607:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:608:2: error: unknown field 'get_ringparam' specified in initializer
+  .get_ringparam       = aq_get_ringparam,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:608:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:608:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:609:2: error: unknown field 'set_ringparam' specified in initializer
+  .set_ringparam       = aq_set_ringparam,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:609:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:609:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:610:2: error: unknown field 'get_eee' specified in initializer
+  .get_eee             = aq_ethtool_get_eee,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:610:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:610:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:611:2: error: unknown field 'set_eee' specified in initializer
+  .set_eee             = aq_ethtool_set_eee,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:611:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:611:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:612:2: error: unknown field 'get_pauseparam' specified in initializer
+  .get_pauseparam      = aq_ethtool_get_pauseparam,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:612:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:612:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:613:2: error: unknown field 'set_pauseparam' specified in initializer
+  .set_pauseparam      = aq_ethtool_set_pauseparam,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:613:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:613:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:619:2: error: unknown field 'get_rxnfc' specified in initializer
+  .get_rxnfc           = aq_ethtool_get_rxnfc,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:619:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:619:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:620:2: error: unknown field 'get_sset_count' specified in initializer
+  .get_sset_count      = aq_ethtool_get_sset_count,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:620:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:620:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:621:2: error: unknown field 'get_ethtool_stats' specified in initializer
+  .get_ethtool_stats   = aq_ethtool_stats,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:621:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:621:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:622:2: error: unknown field 'get_priv_flags' specified in initializer
+  .get_priv_flags      = aq_ethtool_get_priv_flags,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:622:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:622:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:623:2: error: unknown field 'set_priv_flags' specified in initializer
+  .set_priv_flags      = aq_ethtool_set_priv_flags,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:623:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:623:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:628:2: error: unknown field 'get_settings' specified in initializer
+  .get_settings        = aq_ethtool_get_settings,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:628:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:628:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:629:2: error: unknown field 'set_settings' specified in initializer
+  .set_settings        = aq_ethtool_set_settings,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:629:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:629:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:631:2: error: unknown field 'get_coalesce' specified in initializer
+  .get_coalesce      = aq_ethtool_get_coalesce,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:631:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:631:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:632:2: error: unknown field 'set_coalesce' specified in initializer
+  .set_coalesce      = aq_ethtool_set_coalesce,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:632:2: error: excess elements in struct initializer [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:632:2: error: (near initialization for 'aq_ethtool_ops') [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:86:19: error: 'aq_ethtool_stat_names' defined but not used [-Werror=unused-variable]
+ static const char aq_ethtool_stat_names[][ETH_GSTRING_LEN] = {
+                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:111:19: error: 'aq_ethtool_queue_stat_names' defined but not used [-Werror=unused-variable]
+ static const char aq_ethtool_queue_stat_names[][ETH_GSTRING_LEN] = {
+                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.c:122:19: error: 'aq_ethtool_priv_flag_names' defined but not used [-Werror=unused-variable]
+ static const char aq_ethtool_priv_flag_names[][ETH_GSTRING_LEN] = {
+                   ^
+cc1: all warnings being treated as errors
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_hw_utils.c:16:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: In function 'aq_nic_get_dev':
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:102:19: error: 'struct net_device' has no member named 'dev'
+  return self->ndev->dev.parent;
+                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:51: error: 'struct ethtool_regs' declared inside parameter list [-Werror]
+ int aq_nic_get_regs(struct aq_nic_s *self, struct ethtool_regs *regs, void *p);
+                                                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:51: error: its scope is only this definition or declaration, which is probably not what you want [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:137:61: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ void aq_nic_get_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                             ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:138:60: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ int aq_nic_set_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                            ^
+cc1: all warnings being treated as errors
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_nic.c:12:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: In function 'aq_nic_get_dev':
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:102:19: error: 'struct net_device' has no member named 'dev'
+  return self->ndev->dev.parent;
+                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:51: error: 'struct ethtool_regs' declared inside parameter list [-Werror]
+ int aq_nic_get_regs(struct aq_nic_s *self, struct ethtool_regs *regs, void *p);
+                                                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:51: error: its scope is only this definition or declaration, which is probably not what you want [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:137:61: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ void aq_nic_get_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                             ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:138:60: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ int aq_nic_set_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                            ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_nic.c:13:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.h:130:2: error: unknown type name 'cpumask_t'
+  cpumask_t affinity_mask;
+  ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_nic.c:14:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_vec.h:37:1: error: unknown type name 'cpumask_t'
+ cpumask_t *aq_vec_get_affinity_mask(struct aq_vec_s *self);
+ ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_nic.c:16:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.h:28:6: error: unknown type name 'cpumask_t'
+      cpumask_t *affinity_mask);
+      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.c:22:23: fatal error: linux/cpu.h: No such file or directory
+ #include <linux/cpu.h>
+                       ^
+cc1: all warnings being treated as errors
+compilation terminated.
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.c:16:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: In function 'aq_nic_get_dev':
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:102:19: error: 'struct net_device' has no member named 'dev'
+  return self->ndev->dev.parent;
+                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:51: error: 'struct ethtool_regs' declared inside parameter list [-Werror]
+ int aq_nic_get_regs(struct aq_nic_s *self, struct ethtool_regs *regs, void *p);
+                                                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:51: error: its scope is only this definition or declaration, which is probably not what you want [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:137:61: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ void aq_nic_get_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                             ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:138:60: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ int aq_nic_set_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                            ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.c:17:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_vec.h:37:1: error: unknown type name 'cpumask_t'
+ cpumask_t *aq_vec_get_affinity_mask(struct aq_vec_s *self);
+ ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.c:19:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.h:28:6: error: unknown type name 'cpumask_t'
+      cpumask_t *affinity_mask);
+      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.c:141:32: error: unknown type name 'cpumask_t'
+      char *name, void *aq_vec, cpumask_t *affinity_mask)
+                                ^
+vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.c: In function 'aq_pci_func_free_irqs':
+vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.c:197:4: error: implicit declaration of function 'irq_set_affinity_hint' [-Werror=implicit-function-declaration]
+    irq_set_affinity_hint(self->msix_entry[i].vector, NULL);
+    ^
+vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.c: In function 'aq_pci_shutdown':
+vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.c:415:3: error: implicit declaration of function 'pci_wake_from_d3' [-Werror=implicit-function-declaration]
+   pci_wake_from_d3(pdev, !!self->aq_nic_cfg.wol);
+   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.c:445:1: error: data definition has no type or storage class [-Werror]
+ module_pci_driver(aq_pci_ops);
+ ^
+vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.c:445:1: error: type defaults to 'int' in declaration of 'module_pci_driver' [-Werror=implicit-int]
+vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.c:445:1: error: parameter names (without types) in function declaration [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.c:435:26: error: 'aq_pci_ops' defined but not used [-Werror=unused-variable]
+ static struct pci_driver aq_pci_ops = {
+                          ^
+cc1: all warnings being treated as errors
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:12:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.h:39:32: error: expected '=', ',', ';', 'asm' or '__attribute__' before '{' token
+ struct __packed aq_ring_buff_s {
+                                ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.h:130:2: error: unknown type name 'cpumask_t'
+  cpumask_t affinity_mask;
+  ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:13:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: In function 'aq_nic_get_dev':
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:102:19: error: 'struct net_device' has no member named 'dev'
+  return self->ndev->dev.parent;
+                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:51: error: 'struct ethtool_regs' declared inside parameter list [-Werror]
+ int aq_nic_get_regs(struct aq_nic_s *self, struct ethtool_regs *regs, void *p);
+                                                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:51: error: its scope is only this definition or declaration, which is probably not what you want [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:137:61: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ void aq_nic_get_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                             ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:138:60: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ int aq_nic_set_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c: In function 'aq_get_rxpage':
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:38:2: error: implicit declaration of function 'alloc_pages_node' [-Werror=implicit-function-declaration]
+  page = dev_alloc_pages(order);
+  ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_common.h:21:0,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:12:
+vmkdrivers/src_9/drivers/net/aqc/aq_compat.h:108:51: error: 'NUMA_NO_NODE' undeclared (first use in this function)
+ #define dev_alloc_pages(__order) alloc_pages_node(NUMA_NO_NODE,                         \
+                                                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:38:9: note: in expansion of macro 'dev_alloc_pages'
+  page = dev_alloc_pages(order);
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_compat.h:108:51: note: each undeclared identifier is reported only once for each function it appears in
+ #define dev_alloc_pages(__order) alloc_pages_node(NUMA_NO_NODE,                         \
+                                                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:38:9: note: in expansion of macro 'dev_alloc_pages'
+  page = dev_alloc_pages(order);
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:44:2: error: passing argument 1 of 'dma_mapping_error' makes integer from pointer without a cast [-Werror]
+  if (unlikely(dma_mapping_error(dev, daddr)))
+  ^
+In file included from vmkdrivers/src_92/include/linux/dma-mapping.h:46:0,
+                 from vmkdrivers/src_92/include/linux/dmaengine.h:32,
+                 from vmkdrivers/src_92/include/linux/skbuff.h:34,
+                 from vmkdrivers/src_92/include/linux/if_ether.h:156,
+                 from vmkdrivers/src_92/include/linux/etherdevice.h:30,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_common.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:12:
+BLD/build/HEADERS/92-vmkdrivers-asm-x64/vmkernel64/release/asm/dma-mapping.h:83:12: note: expected 'dma_addr_t' but argument is of type 'struct device *'
+ extern int dma_mapping_error(dma_addr_t dma_addr);
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:44:2: error: too many arguments to function 'dma_mapping_error'
+  if (unlikely(dma_mapping_error(dev, daddr)))
+  ^
+In file included from vmkdrivers/src_92/include/linux/dma-mapping.h:46:0,
+                 from vmkdrivers/src_92/include/linux/dmaengine.h:32,
+                 from vmkdrivers/src_92/include/linux/skbuff.h:34,
+                 from vmkdrivers/src_92/include/linux/if_ether.h:156,
+                 from vmkdrivers/src_92/include/linux/etherdevice.h:30,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_common.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:12:
+BLD/build/HEADERS/92-vmkdrivers-asm-x64/vmkernel64/release/asm/dma-mapping.h:83:12: note: declared here
+ extern int dma_mapping_error(dma_addr_t dma_addr);
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c: In function 'aq_get_rxpages':
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:65:11: error: dereferencing pointer to incomplete type
+  if (rxbuf->rxdata.page) {
+           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:67:3: error: implicit declaration of function 'page_ref_count' [-Werror=implicit-function-declaration]
+   if (page_ref_count(rxbuf->rxdata.page) > 1) {
+   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:67:27: error: dereferencing pointer to incomplete type
+   if (page_ref_count(rxbuf->rxdata.page) > 1) {
+                           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:69:9: error: dereferencing pointer to incomplete type
+    rxbuf->rxdata.pg_off += AQ_CFG_RX_FRAME_MAX;
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:70:13: error: dereferencing pointer to incomplete type
+    if (rxbuf->rxdata.pg_off + AQ_CFG_RX_FRAME_MAX <=
+             ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:77:26: error: dereferencing pointer to incomplete type
+     aq_free_rxpage(&rxbuf->rxdata,
+                          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:82:9: error: dereferencing pointer to incomplete type
+    rxbuf->rxdata.pg_off = 0;
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:87:12: error: dereferencing pointer to incomplete type
+  if (!rxbuf->rxdata.page) {
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:88:29: error: dereferencing pointer to incomplete type
+   ret = aq_get_rxpage(&rxbuf->rxdata, order,
+                             ^
+In file included from vmkdrivers/src_92/include/linux/percpu.h:4:0,
+                 from vmkdrivers/src_92/include/linux/rcupdate.h:44,
+                 from vmkdrivers/src_92/include/linux/pid.h:4,
+                 from vmkdrivers/src_92/include/linux/sched.h:73,
+                 from vmkdrivers/src_92/include/linux/mm.h:4,
+                 from vmkdrivers/src_92/include/linux/skbuff.h:28,
+                 from vmkdrivers/src_92/include/linux/if_ether.h:156,
+                 from vmkdrivers/src_92/include/linux/etherdevice.h:30,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_common.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:12:
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c: In function 'aq_ring_alloc':
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:102:30: error: invalid application of 'sizeof' to incomplete type 'struct aq_ring_buff_s'
+   kcalloc(self->size, sizeof(struct aq_ring_buff_s), GFP_KERNEL);
+                              ^
+vmkdrivers/src_92/include/linux/slab.h:72:85: note: in definition of macro 'kcalloc'
+ #define kcalloc(num, unit_size, flags) vmklnx_kzmalloc(VMK_MODULE_HEAP_ID, (num) * (unit_size), flags)
+                                                                                     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c: In function 'aq_ring_tx_clean':
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:227:10: error: invalid use of undefined type 'struct aq_ring_buff_s'
+   struct aq_ring_buff_s *buff = &self->buff_ring[self->sw_head];
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:227:49: error: dereferencing pointer to incomplete type
+   struct aq_ring_buff_s *buff = &self->buff_ring[self->sw_head];
+                                                 ^
+In file included from vmkdrivers/src_92/include/linux/stddef.h:4:0,
+                 from vmkdrivers/src_92/include/linux/posix_types.h:4,
+                 from vmkdrivers/src_92/include/linux/types.h:14,
+                 from vmkdrivers/src_92/include/linux/if_ether.h:27,
+                 from vmkdrivers/src_92/include/linux/etherdevice.h:30,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_common.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:12:
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:229:18: error: dereferencing pointer to incomplete type
+   if (likely(buff->is_mapped)) {
+                  ^
+vmkdrivers/src_92/include/linux/compiler.h:64:39: note: in definition of macro 'likely'
+ #define likely(x) __builtin_expect(!!(x), 1)
+                                       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:230:21: error: dereferencing pointer to incomplete type
+    if (unlikely(buff->is_sop)) {
+                     ^
+vmkdrivers/src_92/include/linux/compiler.h:65:41: note: in definition of macro 'unlikely'
+ #define unlikely(x) __builtin_expect(!!(x), 0)
+                                         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:231:14: error: dereferencing pointer to incomplete type
+     if (!buff->is_eop &&
+              ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:232:13: error: dereferencing pointer to incomplete type
+         buff->eop_index != 0xffffU &&
+             ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:234:11: error: dereferencing pointer to incomplete type
+       buff->eop_index,
+           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:238:31: error: dereferencing pointer to incomplete type
+     dma_unmap_single(dev, buff->pa, buff->len,
+                               ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:238:41: error: dereferencing pointer to incomplete type
+     dma_unmap_single(dev, buff->pa, buff->len,
+                                         ^
+In file included from vmkdrivers/src_92/include/linux/dma-mapping.h:46:0,
+                 from vmkdrivers/src_92/include/linux/dmaengine.h:32,
+                 from vmkdrivers/src_92/include/linux/skbuff.h:34,
+                 from vmkdrivers/src_92/include/linux/if_ether.h:156,
+                 from vmkdrivers/src_92/include/linux/etherdevice.h:30,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_common.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:12:
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:241:29: error: dereferencing pointer to incomplete type
+     dma_unmap_page(dev, buff->pa, buff->len,
+                             ^
+BLD/build/HEADERS/92-vmkdrivers-asm-x64/vmkernel64/release/asm/dma-mapping.h:86:23: note: in definition of macro 'dma_unmap_page'
+  dma_unmap_single(dev,dma_address,size,dir)
+                       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:241:39: error: dereferencing pointer to incomplete type
+     dma_unmap_page(dev, buff->pa, buff->len,
+                                       ^
+BLD/build/HEADERS/92-vmkdrivers-asm-x64/vmkernel64/release/asm/dma-mapping.h:86:35: note: in definition of macro 'dma_unmap_page'
+  dma_unmap_single(dev,dma_address,size,dir)
+                                   ^
+In file included from vmkdrivers/src_92/include/linux/stddef.h:4:0,
+                 from vmkdrivers/src_92/include/linux/posix_types.h:4,
+                 from vmkdrivers/src_92/include/linux/types.h:14,
+                 from vmkdrivers/src_92/include/linux/if_ether.h:27,
+                 from vmkdrivers/src_92/include/linux/etherdevice.h:30,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_common.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:12:
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:246:20: error: dereferencing pointer to incomplete type
+   if (unlikely(buff->is_eop))
+                    ^
+vmkdrivers/src_92/include/linux/compiler.h:65:41: note: in definition of macro 'unlikely'
+ #define unlikely(x) __builtin_expect(!!(x), 0)
+                                         ^
+In file included from vmkdrivers/src_92/include/linux/if_ether.h:156:0,
+                 from vmkdrivers/src_92/include/linux/etherdevice.h:30,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_common.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:12:
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:247:26: error: dereferencing pointer to incomplete type
+    dev_kfree_skb_any(buff->skb);
+                          ^
+vmkdrivers/src_92/include/linux/skbuff.h:492:36: note: in definition of macro 'kfree_skb'
+ #define kfree_skb(skb) __kfree_skb(skb)
+                                    ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:247:4: note: in expansion of macro 'dev_kfree_skb_any'
+    dev_kfree_skb_any(buff->skb);
+    ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:249:7: error: dereferencing pointer to incomplete type
+   buff->pa = 0U;
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:250:7: error: dereferencing pointer to incomplete type
+   buff->eop_index = 0xffffU;
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c: In function 'aq_ring_rx_clean':
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:269:10: error: invalid use of undefined type 'struct aq_ring_buff_s'
+   struct aq_ring_buff_s *buff = &self->buff_ring[self->sw_head];
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:269:49: error: dereferencing pointer to incomplete type
+   struct aq_ring_buff_s *buff = &self->buff_ring[self->sw_head];
+                                                 ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:276:11: error: dereferencing pointer to incomplete type
+   if (buff->is_error) {
+           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:280:11: error: dereferencing pointer to incomplete type
+   if (buff->is_cleaned)
+           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:285:12: error: dereferencing pointer to incomplete type
+   if (!buff->is_eop) {
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:286:21: error: dereferencing pointer to incomplete type
+    for (next_ = buff->next,
+                     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:287:9: error: invalid use of undefined type 'struct aq_ring_buff_s'
+         buff_ = &self->buff_ring[next_]; true;
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:287:33: error: dereferencing pointer to incomplete type
+         buff_ = &self->buff_ring[next_]; true;
+                                 ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:286:27: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+    for (next_ = buff->next,
+                           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:288:22: error: dereferencing pointer to incomplete type
+         next_ = buff_->next,
+                      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:289:9: error: invalid use of undefined type 'struct aq_ring_buff_s'
+         buff_ = &self->buff_ring[next_]) {
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:289:33: error: dereferencing pointer to incomplete type
+         buff_ = &self->buff_ring[next_]) {
+                                 ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:288:28: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+         next_ = buff_->next,
+                            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:300:14: error: dereferencing pointer to incomplete type
+     if (buff_->is_eop)
+              ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:311:16: error: dereferencing pointer to incomplete type
+            buff->rxdata.daddr,
+                ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:312:16: error: dereferencing pointer to incomplete type
+            buff->rxdata.pg_off,
+                ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:313:16: error: dereferencing pointer to incomplete type
+            buff->len, DMA_FROM_DEVICE);
+                ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:315:3: error: implicit declaration of function 'napi_alloc_skb' [-Werror=implicit-function-declaration]
+   skb = napi_alloc_skb(napi, AQ_CFG_RX_HDR_SIZE);
+   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:315:7: error: assignment makes pointer from integer without a cast [-Werror]
+   skb = napi_alloc_skb(napi, AQ_CFG_RX_HDR_SIZE);
+       ^
+In file included from vmkdrivers/src_92/include/linux/skbuff.h:20:0,
+                 from vmkdrivers/src_92/include/linux/if_ether.h:156,
+                 from vmkdrivers/src_92/include/linux/etherdevice.h:30,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_common.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:12:
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:321:28: error: dereferencing pointer to incomplete type
+   hdr_len = min_t(u16, buff->len, AQ_CFG_RX_HDR_SIZE);
+                            ^
+vmkdrivers/src_92/include/linux/kernel.h:639:17: note: in definition of macro 'min_t'
+  ({ type __x = (x); type __y = (y); __x < __y ? __x: __y; })
+                 ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:323:39: error: dereferencing pointer to incomplete type
+   memcpy(skb->data, aq_buf_vaddr(&buff->rxdata), hdr_len);
+                                       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:325:11: error: dereferencing pointer to incomplete type
+   if (buff->len - hdr_len > 0) {
+           ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:326:4: error: implicit declaration of function 'skb_add_rx_frag' [-Werror=implicit-function-declaration]
+    skb_add_rx_frag(skb, 0, buff->rxdata.page,
+    ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:326:32: error: dereferencing pointer to incomplete type
+    skb_add_rx_frag(skb, 0, buff->rxdata.page,
+                                ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:327:10: error: dereferencing pointer to incomplete type
+      buff->rxdata.pg_off + hdr_len,
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:328:10: error: dereferencing pointer to incomplete type
+      buff->len - hdr_len,
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:330:4: error: implicit declaration of function 'page_ref_inc' [-Werror=implicit-function-declaration]
+    page_ref_inc(buff->rxdata.page);
+    ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:330:21: error: dereferencing pointer to incomplete type
+    page_ref_inc(buff->rxdata.page);
+                     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:333:12: error: dereferencing pointer to incomplete type
+   if (!buff->is_eop) {
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:334:29: error: dereferencing pointer to incomplete type
+    for (i = 1U, next_ = buff->next,
+                             ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:335:9: error: invalid use of undefined type 'struct aq_ring_buff_s'
+         buff_ = &self->buff_ring[next_]; true;
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:335:33: error: dereferencing pointer to incomplete type
+         buff_ = &self->buff_ring[next_]; true;
+                                 ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:334:35: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+    for (i = 1U, next_ = buff->next,
+                                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:336:22: error: dereferencing pointer to incomplete type
+         next_ = buff_->next,
+                      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:337:9: error: invalid use of undefined type 'struct aq_ring_buff_s'
+         buff_ = &self->buff_ring[next_], ++i) {
+         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:337:33: error: dereferencing pointer to incomplete type
+         buff_ = &self->buff_ring[next_], ++i) {
+                                 ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:336:28: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+         next_ = buff_->next,
+                            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:337:40: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+         buff_ = &self->buff_ring[next_], ++i) {
+                                        ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:340:12: error: dereferencing pointer to incomplete type
+       buff_->rxdata.daddr,
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:341:12: error: dereferencing pointer to incomplete type
+       buff_->rxdata.pg_off,
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:342:12: error: dereferencing pointer to incomplete type
+       buff_->len, DMA_FROM_DEVICE);
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:344:12: error: dereferencing pointer to incomplete type
+       buff_->rxdata.page,
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:345:12: error: dereferencing pointer to incomplete type
+       buff_->rxdata.pg_off,
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:346:12: error: dereferencing pointer to incomplete type
+       buff_->len,
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:348:23: error: dereferencing pointer to incomplete type
+     page_ref_inc(buff_->rxdata.page);
+                       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:349:10: error: dereferencing pointer to incomplete type
+     buff_->is_cleaned = 1;
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:351:14: error: dereferencing pointer to incomplete type
+     if (buff_->is_eop)
+              ^
+In file included from vmkdrivers/src_92/include/linux/stddef.h:4:0,
+                 from vmkdrivers/src_92/include/linux/posix_types.h:4,
+                 from vmkdrivers/src_92/include/linux/types.h:14,
+                 from vmkdrivers/src_92/include/linux/if_ether.h:27,
+                 from vmkdrivers/src_92/include/linux/etherdevice.h:30,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_common.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.h:15,
+                 from vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:12:
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:358:20: error: dereferencing pointer to incomplete type
+   if (unlikely(buff->is_cso_err)) {
+                    ^
+vmkdrivers/src_92/include/linux/compiler.h:65:41: note: in definition of macro 'unlikely'
+ #define unlikely(x) __builtin_expect(!!(x), 0)
+                                         ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:362:12: error: dereferencing pointer to incomplete type
+    if (buff->is_ip_cso) {
+            ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:380:6: error: 'struct sk_buff' has no member named 'rxhash'
+   skb->rxhash = buff->rss_hash;
+      ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:380:21: error: dereferencing pointer to incomplete type
+   skb->rxhash = buff->rss_hash;
+                     ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:383:3: error: implicit declaration of function 'skb_record_rx_queue' [-Werror=implicit-function-declaration]
+   skb_record_rx_queue(skb, self->idx);
+   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:388:3: error: implicit declaration of function 'napi_gro_receive' [-Werror=implicit-function-declaration]
+   napi_gro_receive(napi, skb);
+   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c: In function 'aq_ring_rx_fill':
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:408:3: error: invalid use of undefined type 'struct aq_ring_buff_s'
+   buff = &self->buff_ring[self->sw_tail];
+   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:408:26: error: dereferencing pointer to incomplete type
+   buff = &self->buff_ring[self->sw_tail];
+                          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:410:7: error: dereferencing pointer to incomplete type
+   buff->flags = 0U;
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:411:7: error: dereferencing pointer to incomplete type
+   buff->len = AQ_CFG_RX_FRAME_MAX;
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:417:7: error: dereferencing pointer to incomplete type
+   buff->pa = aq_buf_daddr(&buff->rxdata);
+       ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:417:32: error: dereferencing pointer to incomplete type
+   buff->pa = aq_buf_daddr(&buff->rxdata);
+                                ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c: In function 'aq_ring_rx_deinit':
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:432:10: error: invalid use of undefined type 'struct aq_ring_buff_s'
+   struct aq_ring_buff_s *buff = &self->buff_ring[self->sw_head];
+          ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:432:49: error: dereferencing pointer to incomplete type
+   struct aq_ring_buff_s *buff = &self->buff_ring[self->sw_head];
+                                                 ^
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:434:23: error: dereferencing pointer to incomplete type
+   aq_free_rxpage(&buff->rxdata, aq_nic_get_dev(self->aq_nic));
+                       ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_ring.c:13:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: In function 'aq_nic_get_dev':
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:103:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_vec.c:14:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_vec.h:37:1: error: unknown type name 'cpumask_t'
+ cpumask_t *aq_vec_get_affinity_mask(struct aq_vec_s *self);
+ ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_vec.c:15:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: In function 'aq_nic_get_dev':
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:102:19: error: 'struct net_device' has no member named 'dev'
+  return self->ndev->dev.parent;
+                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:51: error: 'struct ethtool_regs' declared inside parameter list [-Werror]
+ int aq_nic_get_regs(struct aq_nic_s *self, struct ethtool_regs *regs, void *p);
+                                                   ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:118:51: error: its scope is only this definition or declaration, which is probably not what you want [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:137:61: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ void aq_nic_get_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                             ^
+vmkdrivers/src_9/drivers/net/aqc/aq_nic.h:138:60: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ int aq_nic_set_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                            ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/aq_vec.c:16:0:
+vmkdrivers/src_9/drivers/net/aqc/aq_ring.h:130:2: error: unknown type name 'cpumask_t'
+  cpumask_t affinity_mask;
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_vec.c: In function 'aq_vec_alloc':
+vmkdrivers/src_9/drivers/net/aqc/aq_vec.c:128:2: error: implicit declaration of function 'cpumask_set_cpu' [-Werror=implicit-function-declaration]
+  cpumask_set_cpu(self->aq_ring_param.cpu,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/aq_vec.c: At top level:
+vmkdrivers/src_9/drivers/net/aqc/aq_vec.c:338:1: error: unknown type name 'cpumask_t'
+ cpumask_t *aq_vec_get_affinity_mask(struct aq_vec_s *self)
+ ^
+cc1: all warnings being treated as errors
+In file included from vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_a0.c:14:0:
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_ring.h:130:2: error: unknown type name 'cpumask_t'
+  cpumask_t affinity_mask;
+  ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_a0.c:15:0:
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h: In function 'aq_nic_get_dev':
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:102:19: error: 'struct net_device' has no member named 'dev'
+  return self->ndev->dev.parent;
+                   ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h: At top level:
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:118:51: error: 'struct ethtool_regs' declared inside parameter list [-Werror]
+ int aq_nic_get_regs(struct aq_nic_s *self, struct ethtool_regs *regs, void *p);
+                                                   ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:118:51: error: its scope is only this definition or declaration, which is probably not what you want [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:137:61: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ void aq_nic_get_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                             ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:138:60: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ int aq_nic_set_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                            ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_a0.c:39:4: error: 'NETIF_F_RXHASH' undeclared here (not in a function)
+    NETIF_F_RXHASH |  \
+    ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_a0.c:50:2: note: in expansion of macro 'DEFAULT_A0_BOARD_BASIC_CAPABILITIES'
+  DEFAULT_A0_BOARD_BASIC_CAPABILITIES,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_a0.c:40:4: error: 'NETIF_F_RXCSUM' undeclared here (not in a function)
+    NETIF_F_RXCSUM |  \
+    ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_a0.c:50:2: note: in expansion of macro 'DEFAULT_A0_BOARD_BASIC_CAPABILITIES'
+  DEFAULT_A0_BOARD_BASIC_CAPABILITIES,
+  ^
+cc1: all warnings being treated as errors
+In file included from vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_b0.c:14:0:
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_ring.h:130:2: error: unknown type name 'cpumask_t'
+  cpumask_t affinity_mask;
+  ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_b0.c:15:0:
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h: In function 'aq_nic_get_dev':
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:102:19: error: 'struct net_device' has no member named 'dev'
+  return self->ndev->dev.parent;
+                   ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h: At top level:
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:118:51: error: 'struct ethtool_regs' declared inside parameter list [-Werror]
+ int aq_nic_get_regs(struct aq_nic_s *self, struct ethtool_regs *regs, void *p);
+                                                   ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:118:51: error: its scope is only this definition or declaration, which is probably not what you want [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:137:61: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ void aq_nic_get_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                             ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:138:60: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ int aq_nic_set_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                            ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_b0.c:40:4: error: 'NETIF_F_RXCSUM' undeclared here (not in a function)
+    NETIF_F_RXCSUM |  \
+    ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_b0.c:52:2: note: in expansion of macro 'DEFAULT_B0_BOARD_BASIC_CAPABILITIES'
+  DEFAULT_B0_BOARD_BASIC_CAPABILITIES,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_b0.c:41:4: error: 'NETIF_F_RXHASH' undeclared here (not in a function)
+    NETIF_F_RXHASH |  \
+    ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_b0.c:52:2: note: in expansion of macro 'DEFAULT_B0_BOARD_BASIC_CAPABILITIES'
+  DEFAULT_B0_BOARD_BASIC_CAPABILITIES,
+  ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_b0.c:44:4: error: 'NETIF_F_LRO' undeclared here (not in a function)
+    NETIF_F_LRO,      \
+    ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_b0.c:52:2: note: in expansion of macro 'DEFAULT_B0_BOARD_BASIC_CAPABILITIES'
+  DEFAULT_B0_BOARD_BASIC_CAPABILITIES,
+  ^
+cc1: all warnings being treated as errors
+In file included from vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_utils.c:14:0:
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h: In function 'aq_nic_get_dev':
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:102:19: error: 'struct net_device' has no member named 'dev'
+  return self->ndev->dev.parent;
+                   ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h: At top level:
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:118:51: error: 'struct ethtool_regs' declared inside parameter list [-Werror]
+ int aq_nic_get_regs(struct aq_nic_s *self, struct ethtool_regs *regs, void *p);
+                                                   ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:118:51: error: its scope is only this definition or declaration, which is probably not what you want [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:137:61: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ void aq_nic_get_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                             ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:138:60: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ int aq_nic_set_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                            ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_utils.c: In function 'hw_atl_utils_initfw':
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_utils.c:78:3: error: implicit declaration of function 'pr_err' [-Werror=implicit-function-declaration]
+   aq_pr_err("Bad FW version detected: %x\n",
+   ^
+cc1: all warnings being treated as errors
+In file included from vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_pci_func.h:16:0,
+                 from vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_utils_fw2x.c:16:
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h: In function 'aq_nic_get_dev':
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:102:19: error: 'struct net_device' has no member named 'dev'
+  return self->ndev->dev.parent;
+                   ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h: At top level:
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:118:51: error: 'struct ethtool_regs' declared inside parameter list [-Werror]
+ int aq_nic_get_regs(struct aq_nic_s *self, struct ethtool_regs *regs, void *p);
+                                                   ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:118:51: error: its scope is only this definition or declaration, which is probably not what you want [-Werror]
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:137:61: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ void aq_nic_get_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                             ^
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_nic.h:138:60: error: 'struct ethtool_cmd' declared inside parameter list [-Werror]
+ int aq_nic_set_link_settings(struct aq_nic_s *self, struct ethtool_cmd *cmd);
+                                                            ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_utils_fw2x.c:16:0:
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_pci_func.h:28:6: error: unknown type name 'cpumask_t'
+      cpumask_t *affinity_mask);
+      ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_utils_fw2x.c:17:0:
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_ring.h:130:2: error: unknown type name 'cpumask_t'
+  cpumask_t affinity_mask;
+  ^
+In file included from vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_utils_fw2x.c:18:0:
+vmkdrivers/src_9/drivers/net/aqc/hw_atl/../aq_vec.h:37:1: error: unknown type name 'cpumask_t'
+ cpumask_t *aq_vec_get_affinity_mask(struct aq_vec_s *self);
+ ^
+cc1: all warnings being treated as errors
+GNU ld (GNU Binutils) 2.22
+/build/toolchain/lin32/binutils-2.22/bin/x86_64-linux5.0-ld: cannot find BLD/build/vmkdriver-aqc/release/vmkernel64/SUBDIRS/vmkdrivers/src_9/drivers/net/aqc/aq_main.o: No such file or directory
+./build-aqc.sh: line 48: BLD/build/vmkdriver-aqc/release/vmkernel64/SUBDIRS/vmkdrivers/src_9/drivers/net/aqc/aq_drvinfo.o: No such file or directory
+./build-aqc.sh: line 49: BLD/build/vmkdriver-aqc/release/vmkernel64/SUBDIRS/vmkdrivers/src_9/drivers/net/aqc/aq_ethtool.o: No such file or directory
+./build-aqc.sh: line 50: BLD/build/vmkdriver-aqc/release/vmkernel64/SUBDIRS/vmkdrivers/src_9/drivers/net/aqc/aq_hw_utils.o: No such file or directory
+./build-aqc.sh: line 51: BLD/build/vmkdriver-aqc/release/vmkernel64/SUBDIRS/vmkdrivers/src_9/drivers/net/aqc/aq_nic.o: No such file or directory
+./build-aqc.sh: line 52: BLD/build/vmkdriver-aqc/release/vmkernel64/SUBDIRS/vmkdrivers/src_9/drivers/net/aqc/aq_pci_func.o: No such file or directory
+./build-aqc.sh: line 53: BLD/build/vmkdriver-aqc/release/vmkernel64/SUBDIRS/vmkdrivers/src_9/drivers/net/aqc/aq_ring.o: No such file or directory
+./build-aqc.sh: line 54: BLD/build/vmkdriver-aqc/release/vmkernel64/SUBDIRS/vmkdrivers/src_9/drivers/net/aqc/aq_vec.o: No such file or directory
+./build-aqc.sh: line 55: BLD/build/vmkdriver-aqc/release/vmkernel64/SUBDIRS/vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_a0.o: No such file or directory
+./build-aqc.sh: line 56: BLD/build/vmkdriver-aqc/release/vmkernel64/SUBDIRS/vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_b0.o: No such file or directory
+./build-aqc.sh: line 57: BLD/build/vmkdriver-aqc/release/vmkernel64/SUBDIRS/vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_llh.o: Permission denied
+./build-aqc.sh: line 58: BLD/build/vmkdriver-aqc/release/vmkernel64/SUBDIRS/vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_utils.o: No such file or directory
+./build-aqc.sh: line 59: BLD/build/vmkdriver-aqc/release/vmkernel64/SUBDIRS/vmkdrivers/src_9/drivers/net/aqc/hw_atl/hw_atl_utils_fw2x.o: No such file or directory
+./build-aqc.sh: line 60: BLD/build/vmkdriver-aqc/release/vmkernel64/SUBDIRS/vmkdrivers/src_9/common/vmklinux_module.o: No such file or directory
